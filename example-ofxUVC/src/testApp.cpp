@@ -16,7 +16,7 @@ void testApp::setup(){
     yaml.doc["cameras"][cameraToUse]["width"] >> camWidth;
     yaml.doc["cameras"][cameraToUse]["height"] >> camHeight;
     
-    vidGrabber.initGrabber(camWidth, camHeight);
+    vidGrabber.setup(camWidth, camHeight);
     
     int deviceId = 0;
     vector<string> availableCams = vidGrabber.listVideoDevices();
@@ -42,7 +42,7 @@ void testApp::update(){
     vidGrabber.update();
     if(vidGrabber.isFrameNew())
     {
-        tex.loadData(vidGrabber.getPixelsRef());
+        tex.loadData(vidGrabber.getPixels());
     }
     controls = uvcControl.getCameraControls();
 }

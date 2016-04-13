@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxUVC.h"
+#include "ofQTKitGrabber.h"
 //#include "ofxQTKitVideoGrabber.h"
 #include "ofxYAML.h"
 
